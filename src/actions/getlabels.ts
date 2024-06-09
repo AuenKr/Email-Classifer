@@ -1,9 +1,8 @@
-"use server"
+"use server";
 import { authOption, session } from "@/lib/auth";
 import { google } from "googleapis";
 import { getServerSession } from "next-auth";
 import { authorize } from "./gmailApi";
-
 
 /**
  * Lists the labels in the user's account.
@@ -27,14 +26,12 @@ export async function listLabels(auth: any) {
 
 export async function getLabels() {
   const session: session | null = await getServerSession(authOption);
-  if (!session)
-    return;
+  if (!session) return;
 
   const auth = await authorize(session.user.email);
-  if (!auth)
-    return;
+  if (!auth) return;
   const labels = await listLabels(auth);
   return {
-    result: labels
-  }
+    result: labels,
+  };
 }

@@ -27,9 +27,7 @@ export function OpenApiKey() {
             setApiKey(e.target.value);
           }}
         />
-        {!validKey && (
-          <div className="text-red-500">Enter Valid Open Api key</div>
-        )}
+        {!validKey && <div className="text-red-500">Enter Valid Open Api key</div>}
       </div>
       <div>
         <Button

@@ -7,18 +7,16 @@ export async function authorize(email: string) {
       email,
     },
     select: {
-      refreshToken: true
-    }
-  })
-  if (!result)
-    return null;
+      refreshToken: true,
+    },
+  });
+  if (!result) return null;
 
-  let client: any =
-  {
+  let client: any = {
     type: "authorized_user",
     client_id: process.env.GOOGLE_CLIENT_ID || "Your Google OAuth client id",
     client_secret: process.env.GOOGLE_CLIENT_SECRET || "Your Google OAuth client secret",
-    refresh_token: result?.refreshToken
-  }
-  return google.auth.fromJSON(client)
+    refresh_token: result?.refreshToken,
+  };
+  return google.auth.fromJSON(client);
 }

@@ -13,12 +13,7 @@ export function Navbar() {
       {data && (
         <div className="flex space-x-4 grow-0">
           <Avatar>
-            <Image
-              src={data.user?.image || "/temp.svg"}
-              alt="User Account"
-              width={40}
-              height={40}
-            />
+            <Image src={data.user?.image || "/temp.svg"} alt="User Account" width={40} height={40} />
             <AvatarFallback>
               <UserRound />
             </AvatarFallback>
@@ -30,11 +25,7 @@ export function Navbar() {
         </div>
       )}
       <div className="space-x-3 grow flex justify-end">
-        {data ? (
-          <Button onClick={async () => await signOut()}>Sign Out</Button>
-        ) : (
-          <Button onClick={async () => await signIn("google")}>Sign In</Button>
-        )}
+        {data ? <Button onClick={async () => await signOut()}>Sign Out</Button> : <Button onClick={async () => await signIn("google")}>Sign In</Button>}
         <ModeToggle />
       </div>
     </div>

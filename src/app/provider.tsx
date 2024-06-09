@@ -5,12 +5,7 @@ import { RecoilRoot } from "recoil";
 
 export function Provider({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <SessionProvider>
         <RecoilRoot>{children}</RecoilRoot>
       </SessionProvider>

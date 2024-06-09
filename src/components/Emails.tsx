@@ -27,12 +27,10 @@ export default function Emails() {
         title: "Internal Server Error",
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noEmail]);
 
-  if (loading)
-    return [1, 2, 3, 4, 5].map((val, index) => (
-      <EmailCardSkeleton key={index} />
-    ));
+  if (loading) return [1, 2, 3, 4, 5].map((val, index) => <EmailCardSkeleton key={index} />);
   return (
     <>
       {loading ? null : (

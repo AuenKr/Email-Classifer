@@ -1,13 +1,5 @@
 "use client";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "./ui/button";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { noEmailAtom } from "@/store/atom/noEmailAtom";
@@ -68,12 +60,7 @@ export function EmailOption() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Button
-        variant="outline"
-        size="lg"
-        className="w-[140px]"
-        onClick={classifyBtnHandler}
-      >
+      <Button variant="outline" size="lg" className="w-[140px]" onClick={classifyBtnHandler}>
         {loading ? <Loader2 className="animate-spin" /> : "Classify Email"}
       </Button>
     </div>

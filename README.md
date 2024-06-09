@@ -36,6 +36,7 @@ For Windows/Mac `docker-compose up`
 ###### Mannual Install
 
 Change postgres connection string also
+
 ```
 npm install
 npm run db:generate && npm run db:migrate
