@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+npm run build
+
+npm run lint:check
+npm run lint:fix
+
+npm run prettier
+
+git add .
