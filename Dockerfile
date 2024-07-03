@@ -7,7 +7,6 @@ RUN npm install -g bun
 WORKDIR /app
 
 COPY package* .
-COPY bun.lockb .
 RUN bun install
 
 COPY ./prisma ./prisma
